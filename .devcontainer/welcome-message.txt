@@ -1,0 +1,13 @@
+👋 Boas-vindas à construção de uma aplicação multicamadas moderna com o modo agent do GitHub Copilot!
+
+Você vai construir o OctoFit Tracker usando:
+- Camada de apresentação: React 19
+- Camada de lógica: Node.js + Express + TypeScript
+- Camada de dados: MongoDB
+
+Portas usadas neste exercício:
+- 3000 (pública, interface Vite)
+- 8000 (pública, API Express)
+- 27017 (privada, MongoDB)
+
+📃 Documentação do GitHub Copilot: https://docs.github.com/en/copilot

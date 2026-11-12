@@ -1,0 +1,50 @@
+{
+    "name": "Codespace da aplicação multicamadas OctoFit Tracker",
+    "image": "mcr.microsoft.com/devcontainers/base:jammy",
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+        "ghcr.io/devcontainers/features/github-cli:1": {},
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "lts",
+            "pnpmVersion": "latest",
+            "nvmVersion": "latest"
+        }
+    },
+    "postCreateCommand": "sudo chmod +x ./.devcontainer/post_create.sh && ./.devcontainer/post_create.sh",
+    "postStartCommand": "sudo chmod +x ./.devcontainer/post_start.sh && ./.devcontainer/post_start.sh",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "github.copilot",
+                "markdown-lint.markdownlinter",
+                "ms-vscode.vscode-typescript-next",
+                "dbaeumer.vscode-eslint"
+            ],
+            "settings": {
+                "chat.agent.enabled": true
+            }
+        }
+    },
+    "forwardPorts": [
+        3000,
+        8000,
+        27017
+    ],
+    "portsAttributes": {
+        "3000": {
+            "label": "octofit-tracker-frontend",
+            "requireLocalPort": true,
+            "visibility": "public"
+        },
+        "8000": {
+            "label": "octofit-tracker-api",
+            "requireLocalPort": true,
+            "visibility": "public"
+        },
+        "27017": {
+            "label": "octofit-tracker-mongodb",
+            "requireLocalPort": true,
+            "visibility": "private"
+        }
+    }
+}
